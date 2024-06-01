@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "codigo": "6f07ce65-c530-4265-bbac-9474594bbfac",
+    "nome": "s1",
+    "descricao": "sala 1",
+    "limiteSuportado": "10"
+  },
+  {
+    "codigo": "81539e39-043e-41c6-8f27-e6cebab78b6c",
+    "nome": "s2",
+    "descricao": "sala 2",
+    "limiteSuportado": "5"
+  },
+  {
+    "codigo": "29c50c46-9d1e-47d2-9a67-c2c80ce62366",
+    "nome": "s3",
+    "descricao": "sala 3",
+    "limiteSuportado": "50"
+  },
+  {
+    "codigo": "09267b1e-a8d7-47b7-b977-c1e91d397aa9",
+    "nome": "S5",
+    "descricao": "sala 5",
+    "limiteSuportado": "100"
+  },
+  {
+    "codigo": "1df01cd5-569e-4f25-a8fc-bff5615ed438",
+    "nome": "s10",
+    "descricao": "sala 10",
+    "limiteSuportado": "1000"
+  },
+  {
+    "codigo": "79019426-f756-4b11-9092-aad97d5ab71f",
+    "nome": "S44",
+    "descricao": "Sala 44",
+    "limiteSuportado": "44"
+  },
+  {
+    "codigo": "5adb4d64-3e23-4d4a-8ec0-32091781af92",
+    "nome": "s77",
+    "descricao": "Salão 77",
+    "limiteSuportado": "77"
+  }
+]

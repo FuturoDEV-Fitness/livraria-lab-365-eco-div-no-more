@@ -1,3 +1,6 @@
+const Auditorio = require("../src/classes/Auditorio");
+const AuditorioCrud = require("../src/classes/AuditorioCrud");
+
 const readline = require('readline/promises');
 
 const rl = readline.createInterface({
@@ -11,18 +14,40 @@ async function run() {
 
     switch (resposta) {
         case 'criar':
-            /* Coloque sua resposta aqui  */
+
+            const nome = await rl.question("Qual é o nome do auditório? ");
+            const descricao = await rl.question("Qual é a descrição do auditório? ");
+            const limiteSuportado = await rl.question("Qual é o limite suportado? ");
+
+            const auditorio = new Auditorio(nome, descricao, limiteSuportado);
+
+            const auditorioCrud = new AuditorioCrud();
+            auditorioCrud.criar(auditorio);
+
+            console.log(`${auditorio.getNome} adicionado com sucesso.`);
+
             rl.close();
             break;
+
         case 'deletar': {
             /* Coloque sua resposta aqui */
             rl.close();
             break;
         }
-        case 'consultar': {
+        case 'alterar': {
             /* Coloque sua resposta aqui */
             rl.close();
             break;
+        }
+        case 'consultar': {
+
+            const auditorioPesquisado = await rl.question("Qual é o nome do auditório? ");
+            const auditorioCrud = new AuditorioCrud();
+            auditorioCrud.consultar(auditorioPesquisado);
+
+            rl.close();
+            break;
+
         }
         default:
             console.log("Ação não reconhecida.");
