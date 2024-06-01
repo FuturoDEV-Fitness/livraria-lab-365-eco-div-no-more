@@ -24,24 +24,36 @@ class AuditorioCrud {
         )
     }
 
-    deletar(codigo) {
-        // ler o array e procurar pelo codigo
-        // const auditoriosSalvos = JSON.parse(fs.readFileSync(this.filePath, "utf-8"));
-        // const auditorioEncontrado = auditoriosSalvos.find(auditorio => auditorio.nome === auditorioPesquisado)
-        // usar o filter para remover o elemento
-        // salva de novo no arquivo o array filtrado
+    deletar(codigoPesquisado) {
+                
+        const auditoriosSalvos = JSON.parse(fs.readFileSync(this.filePath, "utf-8"));
+
+        const codigoEncontrado = auditoriosSalvos.find(auditorio => auditorio.codigo === codigoPesquisado);
+
+        if(codigoEncontrado) {
+            const auditoriosRestantes = (auditoriosSalvos.filter(auditorio => auditorio.codigo !== codigoPesquisado));
+            console.log(`Auditório código [ ${codigoPesquisado} ] removido com sucesso.`);
+
+            fs.writeFileSync(
+                this.filePath,
+                JSON.stringify(auditoriosRestantes, null, 2),
+                "utf-8"
+            )
+        } else {
+            console.log("Código de auditório não encontrado.");
+        }
     }
 
     consultar(auditorioPesquisado) {
                 
         const auditoriosSalvos = JSON.parse(fs.readFileSync(this.filePath, "utf-8"));
 
-        const auditorioEncontrado = auditoriosSalvos.find(auditorio => auditorio.nome === auditorioPesquisado)
+        const auditorioEncontrado = auditoriosSalvos.find(auditorio => auditorio.nome === auditorioPesquisado);
 
         if(auditorioEncontrado) {
-            console.log(auditorioEncontrado)
+            console.log(auditorioEncontrado);
         } else {
-            console.log("Auditório não encontrado.")
+            console.log("Auditório não encontrado.");
         }
     }
 }

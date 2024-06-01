@@ -1,44 +1,50 @@
 [
   {
-    "codigo": "6f07ce65-c530-4265-bbac-9474594bbfac",
+    "codigo": "1",
     "nome": "s1",
     "descricao": "sala 1",
     "limiteSuportado": "10"
   },
   {
-    "codigo": "81539e39-043e-41c6-8f27-e6cebab78b6c",
+    "codigo": "2",
     "nome": "s2",
     "descricao": "sala 2",
     "limiteSuportado": "5"
   },
   {
-    "codigo": "29c50c46-9d1e-47d2-9a67-c2c80ce62366",
+    "codigo": "3",
     "nome": "s3",
     "descricao": "sala 3",
     "limiteSuportado": "50"
   },
   {
-    "codigo": "09267b1e-a8d7-47b7-b977-c1e91d397aa9",
+    "codigo": "4",
     "nome": "S5",
     "descricao": "sala 5",
     "limiteSuportado": "100"
   },
   {
-    "codigo": "1df01cd5-569e-4f25-a8fc-bff5615ed438",
-    "nome": "s10",
-    "descricao": "sala 10",
-    "limiteSuportado": "1000"
+    "codigo": "0e6b8397-519c-4ac9-9e2c-76aac6281f59",
+    "nome": "SC 1",
+    "descricao": "Sala de Conferências 1",
+    "limiteSuportado": "20"
   },
   {
-    "codigo": "79019426-f756-4b11-9092-aad97d5ab71f",
-    "nome": "S44",
-    "descricao": "Sala 44",
-    "limiteSuportado": "44"
+    "codigo": "bb443e7a-9786-4a02-a618-578769adfe14",
+    "nome": "SGC",
+    "descricao": "Sala Geral de Conferências",
+    "limiteSuportado": "100"
   },
   {
-    "codigo": "5adb4d64-3e23-4d4a-8ec0-32091781af92",
-    "nome": "s77",
-    "descricao": "Salão 77",
-    "limiteSuportado": "77"
+    "codigo": "8ffccd34-8bda-46b0-81e4-541f0c9cfb4e",
+    "nome": "Salão Paroquial",
+    "descricao": "Sala geralmente utilizada para cerimônias",
+    "limiteSuportado": "50"
+  },
+  {
+    "codigo": "41415cc4-1d2e-4083-9cc6-0bd8f9c0dd3c",
+    "nome": "S10",
+    "descricao": "Sala 10",
+    "limiteSuportado": "100"
   }
 ]

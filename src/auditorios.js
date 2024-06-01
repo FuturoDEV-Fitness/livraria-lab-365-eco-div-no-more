@@ -13,7 +13,7 @@ async function run() {
     const resposta = await rl.question('Escolha uma ação (criar, deletar, alterar, consultar): ');
 
     switch (resposta) {
-        case 'criar':
+        case 'criar': {
 
             const nome = await rl.question("Qual é o nome do auditório? ");
             const descricao = await rl.question("Qual é a descrição do auditório? ");
@@ -24,18 +24,18 @@ async function run() {
             const auditorioCrud = new AuditorioCrud();
             auditorioCrud.criar(auditorio);
 
-            console.log(`${auditorio.getNome} adicionado com sucesso.`);
+            console.log(`Auditório ${auditorio.getNome} adicionado com sucesso.`);
 
-            rl.close();
-            break;
-
-        case 'deletar': {
-            /* Coloque sua resposta aqui */
             rl.close();
             break;
         }
-        case 'alterar': {
-            /* Coloque sua resposta aqui */
+        case 'deletar': {
+
+            const codigoPesquisado = await rl.question("Qual é o código do auditório? ");
+            const auditorioCrud = new AuditorioCrud();
+
+            auditorioCrud.deletar(codigoPesquisado);
+
             rl.close();
             break;
         }
@@ -53,7 +53,6 @@ async function run() {
             console.log("Ação não reconhecida.");
             rl.close();
     }
-
 }
 
 run();
