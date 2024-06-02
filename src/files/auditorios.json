@@ -1,15 +1,15 @@
 [
   {
     "codigo": "1",
-    "nome": "s1",
+    "nome": "Nova Sala 1",
     "descricao": "sala 1",
     "limiteSuportado": "10"
   },
   {
     "codigo": "2",
-    "nome": "s2",
-    "descricao": "sala 2",
-    "limiteSuportado": "5"
+    "nome": "Sala 2",
+    "descricao": "Sala de reuniões no prédio 2",
+    "limiteSuportado": ""
   },
   {
     "codigo": "3",
@@ -46,5 +46,17 @@
     "nome": "S10",
     "descricao": "Sala 10",
     "limiteSuportado": "100"
+  },
+  {
+    "codigo": "06508f70-f62d-480b-9411-a7b817093e5a",
+    "nome": "SR",
+    "descricao": "Sala de Reuniões",
+    "limiteSuportado": "25"
+  },
+  {
+    "codigo": "713e9bc0-7f08-4857-8782-664c94f3b5ed",
+    "nome": "APR",
+    "descricao": "Área principal de reuniões",
+    "limiteSuportado": "500"
   }
 ]

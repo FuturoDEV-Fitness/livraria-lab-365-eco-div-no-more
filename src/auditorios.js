@@ -10,7 +10,7 @@ const rl = readline.createInterface({
 
 async function run() {
 
-    const resposta = await rl.question('Escolha uma ação (criar, deletar, alterar, consultar): ');
+    const resposta = await rl.question("Escolha uma ação (criar, deletar, alterar, consultar): ");
 
     switch (resposta) {
         case 'criar': {
@@ -39,19 +39,67 @@ async function run() {
             rl.close();
             break;
         }
+        case 'alterar': {
+
+            const auditorioPesquisado = await rl.question("Qual é o nome do auditório que deseja alterar? ");
+            const auditorioCrud = new AuditorioCrud();
+            const resposta = auditorioCrud.consultar(auditorioPesquisado);
+
+            if(resposta !== "Auditório não encontrado.") {
+                const auditorioTemp = resposta;
+
+                console.log(`Alterar o nome existente [${resposta.nome}]?`);
+                const alterarNome = await rl.question("Se sim, digite o novo nome, se não digite n: ");
+
+                if(alterarNome !== "n") {
+                    auditorioTemp.nome = alterarNome;
+                }
+
+                console.log(`Alterar a descrição existente [${resposta.descricao}]?`);
+                const alterarDescricao = await rl.question("Se sim, digite a nova descrição, se não digite n: ");
+
+                if(alterarDescricao !== "n") {
+                    auditorioTemp.descricao = alterarDescricao;
+                }
+
+                console.log(`Alterar o limite existente [${resposta.limiteSuportado}]?`);
+                const alterarLimite = await rl.question("Se sim, digite o novo limite, se não digite n: ");
+
+                if(alterarLimite !== "n") {
+                    auditorioTemp.limiteSuportado = alterarLimite;
+                }
+                auditorioCrud.alterar(auditorioTemp);
+            } else {
+                console.log(resposta)
+            }
+
+            rl.close();
+            break;
+        }
         case 'consultar': {
 
             const auditorioPesquisado = await rl.question("Qual é o nome do auditório? ");
             const auditorioCrud = new AuditorioCrud();
-            auditorioCrud.consultar(auditorioPesquisado);
+            const respostaConsulta = auditorioCrud.consultar(auditorioPesquisado);
+
+            console.log("----- Resultado da Consulta -----");
+            if (respostaConsulta !== "Auditório não encontrado.") {
+                // console.log(`Código: ${respostaConsulta.codigo}`);
+                console.log(`Nome: ${respostaConsulta.nome}`);
+                console.log(`Descrição: ${respostaConsulta.descricao}`);
+                console.log(`Limite Suportado: ${respostaConsulta.limiteSuportado}`);
+            } else {
+                console.log(respostaConsulta);
+            }
+            console.log("---------------------------------");
 
             rl.close();
             break;
-
         }
-        default:
+        default: {
             console.log("Ação não reconhecida.");
             rl.close();
+        }
     }
 }
 

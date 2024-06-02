@@ -44,6 +44,25 @@ class AuditorioCrud {
         }
     }
 
+    alterar(auditorioAlterado) {
+
+        const auditoriosSalvos = JSON.parse(fs.readFileSync(this.filePath, "utf-8"));
+
+        const codigoEncontrado = auditoriosSalvos.find(auditorio => auditorio.codigo === auditorioAlterado.codigo);
+
+        codigoEncontrado.nome = auditorioAlterado.nome;
+        codigoEncontrado.descricao = auditorioAlterado.descricao;
+        codigoEncontrado.limiteSuportado = auditorioAlterado.limiteSuportado;
+
+        console.log("Auditório alterado com sucesso.");
+
+        fs.writeFileSync(
+            this.filePath,
+            JSON.stringify(auditoriosSalvos, null, 2),
+            "utf-8"
+        )
+    }
+
     consultar(auditorioPesquisado) {
                 
         const auditoriosSalvos = JSON.parse(fs.readFileSync(this.filePath, "utf-8"));
@@ -51,9 +70,9 @@ class AuditorioCrud {
         const auditorioEncontrado = auditoriosSalvos.find(auditorio => auditorio.nome === auditorioPesquisado);
 
         if(auditorioEncontrado) {
-            console.log(auditorioEncontrado);
+            return auditorioEncontrado;
         } else {
-            console.log("Auditório não encontrado.");
+            return "Auditório não encontrado.";
         }
     }
 }
