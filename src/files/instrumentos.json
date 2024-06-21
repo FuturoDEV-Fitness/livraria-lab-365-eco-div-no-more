@@ -1,1 +1,14 @@
-[{"nome":"Fernandão"}]
+[
+  {
+    "codigo": "099x",
+    "nome": "Violao",
+    "tipo": "dsdd",
+    "estado": "Usado"
+  },
+  {
+    "codigo": "e638d73e-caf9-40aa-bf04-d93e150abeb1",
+    "nome": "ratinho",
+    "tipo": "girafinha",
+    "estado": "cavalinho"
+  }
+]
