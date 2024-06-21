@@ -24,7 +24,6 @@ async function run() {
   let resposta = await rl.question(
     "Escolha uma ação (criar, deletar, alterar, consultar): "
   );
-  resposta = "criar";
   switch (resposta) {
     case "criar":
       let respostaCriar = await rl.question(
@@ -42,7 +41,10 @@ async function run() {
       rl.close();
       break;
     case "deletar": {
-      /* Coloque sua resposta aqui */
+      let respostaDeletar = await rl.question(
+        "Digite o codigo do objeto a ser deletado: "
+      );
+      crud.iDelete(respostaDeletar);
       rl.close();
       break;
     }

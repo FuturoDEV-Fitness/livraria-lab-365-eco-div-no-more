@@ -58,7 +58,26 @@ class InstrumentoCrud {
   }
 
   iUpdate() {}
-  iDelete() {}
+  iDelete(codigo) {
+    try {
+      const data = fs.readFileSync("./files/instrumentos.json", "utf-8");
+      let parsedData = JSON.parse(data);
+
+      const updatedData = parsedData.filter(
+        (instrument) => instrument.codigo !== codigo
+      );
+
+      fs.writeFileSync(
+        "./files/instrumentos.json",
+        JSON.stringify(updatedData, null, 2),
+        "utf-8"
+      );
+
+      console.log("Object deleted successfully!");
+    } catch (err) {
+      console.error("Error reading or parsing the file:", err);
+    }
+  }
 }
 
 module.exports = InstrumentoCrud;
