@@ -2,7 +2,6 @@ const readline = require("readline/promises");
 const Instrumento = require("./classes/Instrumento");
 const InstrumentoCrud = require("./classes/IntrumentoCrud");
 
-
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -32,10 +31,9 @@ async function run() {
         "Digite as informações do instrumento, separando por virgulas. (nome,tipo,estado): "
       );
       const validInput = validate(respostaCriar);
-       
+
       validInput
         ? crud.iCreate({
-    
             nome: validInput[0],
             tipo: validInput[1],
             estado: validInput[2],
